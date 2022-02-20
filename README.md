@@ -1,2 +1,2 @@
-# simple-todo-app
-A simple todo app using node.js and mongodb with JWT Authentication
+# simple-todo-api
+A simple todo api using node.js and mongodb with JWT Authentication.

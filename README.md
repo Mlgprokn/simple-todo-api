@@ -17,7 +17,7 @@ A simple todo api using node.js and mongodb with JWT Authentication.
   
 *  **URL Params**
 
-  None
+  `None`
 
 * **Data Params**
 
@@ -46,12 +46,13 @@ A simple todo api using node.js and mongodb with JWT Authentication.
 * **Sample Call:**
 
   ```javascript
-    axios({
-      method: 'post',
-      url: '/register',
-      data: {
-        username: 'admin',
-        password: 'password'
-      }
+    axios.post('/register', {
+      username: 'admin',
+      password: 'password'
+    })
+    .then((response) => {
+      console.log(response);
+    }, (error) => {
+      console.log(error);
     });
   ```

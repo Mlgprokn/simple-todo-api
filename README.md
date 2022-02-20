@@ -122,11 +122,9 @@ In order to start the API run:
   `Authentication = "Bearer " + JWT`
 
 * **Success Response:**
-  
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+    **Content:** `{ todos: [ { _id: "exmaple", title: "Learn Node.js", isCompleted: false }, { _id: "exmaple2", title: "Do the dishes", isCompleted: false } ] }`
  
 * **Error Response:**
 
@@ -171,11 +169,9 @@ In order to start the API run:
   `Authentication = "Bearer " + JWT`
 
 * **Success Response:**
-  
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+    **Content:** `{ todo: { _id: "exmaple", title: "Learn Node.js", isCompleted: false } }`
  
 * **Error Response:**
 
@@ -224,11 +220,9 @@ In order to start the API run:
   `Authentication = "Bearer " + JWT`
 
 * **Success Response:**
-  
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
-
+ 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+    **Content:** `{ todo: { _id: "id", title: "Updated title", isCompleted: true } }`
  
 * **Error Response:**
 
@@ -284,7 +278,7 @@ In order to start the API run:
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ todo : { _id: "example", title: "Updated title", isCompleted: true } }`
+    **Content:** `{ todo : { _id: "id", title: "Updated title", isCompleted: true } }`
  
 * **Error Response:**
 

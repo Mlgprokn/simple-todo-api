@@ -14,10 +14,6 @@ A simple todo api using node.js and mongodb with JWT Authentication.
 * **Method:**
 
   `POST`
-  
-*  **URL Params**
-
-  None
 
 * **Data Params**
 
@@ -69,10 +65,6 @@ A simple todo api using node.js and mongodb with JWT Authentication.
 * **Method:**
 
   `POST`
-  
-*  **URL Params**
-
-  None
 
 * **Data Params**
 

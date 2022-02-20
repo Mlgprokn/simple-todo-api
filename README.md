@@ -154,7 +154,7 @@ A simple todo api using node.js and mongodb with JWT Authentication.
   
 **Create a new Todo**
 ----
-  Creates a new todo
+  Creates a new Todo
 
 * **URL**
 
@@ -201,9 +201,9 @@ A simple todo api using node.js and mongodb with JWT Authentication.
     });
   ```
  
-  **Update an exsisting Todo**
+**Update an exsisting Todo**
 ----
-  Updates an exsisting todo
+  Updates an exsisting Todo
 
 * **URL**
 

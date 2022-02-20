@@ -3,35 +3,26 @@ A simple todo api using node.js and mongodb with JWT Authentication.
 
 
 # API Documentation
-**Title**
+**Register**
 ----
-  <_Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple)._>
+  Registers a new user
 
 * **URL**
 
-  <_The URL Structure (path only, no root url)_>
+  /api/users/register
 
 * **Method:**
-  
-  <_The request type_>
 
-  `GET` | `POST` | `DELETE` | `PUT`
+  `POST`
   
 *  **URL Params**
 
-   <_If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required. Document data constraints._> 
-
-   **Required:**
- 
-   `id=[integer]`
-
-   **Optional:**
- 
-   `photo_id=[alphanumeric]`
+  None
 
 * **Data Params**
 
-  <_If making a post request, what should the body payload look like? URL Params rules apply here too._>
+  'username=[string]'
+  'password=[string]'
 
 * **Success Response:**
   
@@ -54,8 +45,13 @@ A simple todo api using node.js and mongodb with JWT Authentication.
 
 * **Sample Call:**
 
-  <_Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) - this makes life easier and more predictable._> 
-
-* **Notes:**
-
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
+  ```javascript
+    axios({
+      method: 'post',
+      url: '/register',
+      data: {
+        username: 'admin',
+        password: 'password'
+      }
+    });
+  ```

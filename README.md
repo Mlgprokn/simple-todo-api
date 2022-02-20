@@ -31,11 +31,9 @@ In order to start the API run:
   `password=[string]`
 
 * **Success Response:**
-  
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+    **Content:** `{ user : { username: "admin", password: "password" } }`
  
 * **Error Response:**
 
@@ -75,14 +73,16 @@ In order to start the API run:
   `password=[string]`
 
 * **Success Response:**
-  
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+    **Content:** `{ user : { username: "admin", password: "password" }, token: "JWT" }`
  
 * **Error Response:**
 
+  * **Code:** 401 UNAUTHORIZED <br />
+    **Content:** `{ error : "Wrong username or password" }`
+  
+  OR
   * **Code:** 500 INTERNAL SERVER ERROR <br />
     **Content:** `{ error : "Internal error" }`
 
@@ -116,6 +116,10 @@ In order to start the API run:
 * **Data Params**
 
   `None`
+  
+* **Headers**
+
+  `Authentication = "Bearer " + JWT`
 
 * **Success Response:**
   
@@ -161,6 +165,10 @@ In order to start the API run:
 * **Data Params**
 
   `title=[string]`
+  
+* **Headers**
+
+  `Authentication = "Bearer " + JWT`
 
 * **Success Response:**
   
@@ -210,6 +218,10 @@ In order to start the API run:
   `_id=[string]`
   `title=[string]`
   `isCompleted=[boolean]` 
+  
+* **Headers**
+
+  `Authentication = "Bearer " + JWT`
 
 * **Success Response:**
   
@@ -264,6 +276,10 @@ In order to start the API run:
 * **Data Params**
 
   `_id=[string]`
+
+* **Headers**
+
+  `Authentication = "Bearer " + JWT`
 
 * **Success Response:**
 

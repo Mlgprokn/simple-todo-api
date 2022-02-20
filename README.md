@@ -9,7 +9,7 @@ To get all the requred packaged run:
 
 In order to start the API run: 
 
-`npm start`
+`nodemon source/server.ts`
 
 
 # API Documentation
@@ -39,15 +39,8 @@ In order to start the API run:
  
 * **Error Response:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
-
-  OR
-
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
+  * **Code:** 500 INTERNAL SERVER ERROR <br />
+    **Content:** `{ error : "Internal error" }`
 
 * **Sample Call:**
 
@@ -90,15 +83,8 @@ In order to start the API run:
  
 * **Error Response:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
-
-  OR
-
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
+  * **Code:** 500 INTERNAL SERVER ERROR <br />
+    **Content:** `{ error : "Internal error" }`
 
 * **Sample Call:**
 
@@ -140,15 +126,13 @@ In order to start the API run:
  
 * **Error Response:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
   * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
-
+    **Content:** `{ error : "Unauthorized" }`
+  
   OR
 
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
+  * **Code:** 500 INTERNAL SERVER ERROR <br />
+    **Content:** `{ error : "Internal error" }`
 
 * **Sample Call:**
 
@@ -187,15 +171,13 @@ In order to start the API run:
  
 * **Error Response:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
   * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
-
+    **Content:** `{ error : "Unauthorized" }`
+  
   OR
 
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
+  * **Code:** 500 INTERNAL SERVER ERROR <br />
+    **Content:** `{ error : "Internal error" }`
 
 * **Sample Call:**
 
@@ -238,21 +220,24 @@ In order to start the API run:
  
 * **Error Response:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
+  * **Code:** 404 NOT FOUND <br />
+    **Content:** `{ error : "Record not found" }`
 
   OR
 
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
+  * **Code:** 401 UNAUTHORIZED <br />
+    **Content:** `{ error : "Unauthorized" }`
+  
+  OR
+
+  * **Code:** 500 INTERNAL SERVER ERROR <br />
+    **Content:** `{ error : "Internal error" }`
 
 * **Sample Call:**
 
   ```javascript
     axios.post('/api/todos/update' {
-      id: 'id',
+      _id: 'id',
       title: 'Updated title',
       isCompleted: true
     })
@@ -281,29 +266,30 @@ In order to start the API run:
   `_id=[string]`
 
 * **Success Response:**
-  
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+    **Content:** `{ todo : { _id: "example", title: "Updated title", isCompleted: true } }`
  
 * **Error Response:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
+  * **Code:** 404 NOT FOUND <br />
+    **Content:** `{ error : "Record not found" }`
 
   OR
 
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
+  * **Code:** 401 UNAUTHORIZED <br />
+    **Content:** `{ error : "Unauthorized" }`
+  
+  OR
+
+  * **Code:** 500 INTERNAL SERVER ERROR <br />
+    **Content:** `{ error : "Internal error" }`
 
 * **Sample Call:**
 
   ```javascript
     axios.post('/api/todos/delete' {
-      id: 'id'
+      _id: '_id'
     })
     .then((response) => {
       console.log(response);

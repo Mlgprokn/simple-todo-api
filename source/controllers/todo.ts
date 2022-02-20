@@ -3,8 +3,10 @@ import logging from '../config/logging';
 import Todo from '../models/todo';
 import mongoose from 'mongoose';
 
+/** The namespace */
 const NAMESPACE = 'TodoController';
 
+/** Gets all todos */
 const getAllTodos = (req: Request, res: Response, next: NextFunction) => {
     logging.info(NAMESPACE, `Get all todos`);
 
@@ -16,12 +18,15 @@ const getAllTodos = (req: Request, res: Response, next: NextFunction) => {
             });
         })
         .catch((error) => {
+            logging.error(NAMESPACE, error.message, error);
+
             return res.status(500).json({
                 message: error.message
             });
         });
 };
 
+/** Creates a new todo */
 const createTodo = (req: Request, res: Response, next: NextFunction) => {
     logging.info(NAMESPACE, `Create new todo`);
 
@@ -41,12 +46,15 @@ const createTodo = (req: Request, res: Response, next: NextFunction) => {
             });
         })
         .catch((error) => {
+            logging.error(NAMESPACE, error.message, error);
+
             return res.status(500).json({
                 message: error.message
             });
         });
 };
 
+/** Updates a todo */
 const updateTodo = (req: Request, res: Response, next: NextFunction) => {
     logging.info(NAMESPACE, `Updating a todo`);
 
@@ -65,12 +73,15 @@ const updateTodo = (req: Request, res: Response, next: NextFunction) => {
             }
         })
         .catch((error) => {
+            logging.error(NAMESPACE, error.message, error);
+
             return res.status(500).json({
                 message: error.message
             });
         });
 };
 
+/** Deletes a todo */
 const deleteTodo = (req: Request, res: Response, next: NextFunction) => {
     logging.info(NAMESPACE, `Deleting a todo`);
 
@@ -89,6 +100,8 @@ const deleteTodo = (req: Request, res: Response, next: NextFunction) => {
             }
         })
         .catch((error) => {
+            logging.error(NAMESPACE, error.message, error);
+
             return res.status(500).json({
                 message: error.message
             });

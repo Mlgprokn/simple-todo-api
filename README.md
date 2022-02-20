@@ -17,7 +17,7 @@ A simple todo api using node.js and mongodb with JWT Authentication.
   
 *  **URL Params**
 
-  `None`
+  None
 
 * **Data Params**
 

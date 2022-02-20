@@ -52,7 +52,8 @@ A simple todo api using node.js and mongodb with JWT Authentication.
     })
     .then((response) => {
       console.log(response);
-    }, (error) => {
+    })
+    .catch((error) => {
       console.log(error);
     });
   ```

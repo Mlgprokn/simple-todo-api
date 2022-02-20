@@ -94,7 +94,7 @@ A simple todo api using node.js and mongodb with JWT Authentication.
 
   ```javascript
     axios.post('/api/login', {
-      username: '/admin',
+      username: 'admin',
       password: 'password'
     })
     .then((response) => {
@@ -151,3 +151,106 @@ A simple todo api using node.js and mongodb with JWT Authentication.
       console.log(error);
     });
   ```
+  
+   **Create a new Todo**
+----
+  Creates a new todo
+
+* **URL**
+
+  /api/todos/create
+
+* **Method:**
+
+  `POST`
+
+* **Data Params**
+
+  `title=[string]`
+
+* **Success Response:**
+  
+  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
+
+  * **Code:** 200 <br />
+    **Content:** `{ id : 12 }`
+ 
+* **Error Response:**
+
+  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
+
+  * **Code:** 401 UNAUTHORIZED <br />
+    **Content:** `{ error : "Log in" }`
+
+  OR
+
+  * **Code:** 422 UNPROCESSABLE ENTRY <br />
+    **Content:** `{ error : "Email Invalid" }`
+
+* **Sample Call:**
+
+  ```javascript
+    axios.post('/api/todos/create' {
+      title: 'Learn Node.js'
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  ```
+ 
+  **Update an exsisting Todo**
+----
+  Updates an exsisting todo
+
+* **URL**
+
+  /api/todos/update
+
+* **Method:**
+
+  `POST`
+
+* **Data Params**
+
+  `_id=[string]`
+  `title=[string]`
+  `isCompleted=[boolean]` 
+
+* **Success Response:**
+  
+  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
+
+  * **Code:** 200 <br />
+    **Content:** `{ id : 12 }`
+ 
+* **Error Response:**
+
+  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
+
+  * **Code:** 401 UNAUTHORIZED <br />
+    **Content:** `{ error : "Log in" }`
+
+  OR
+
+  * **Code:** 422 UNPROCESSABLE ENTRY <br />
+    **Content:** `{ error : "Email Invalid" }`
+
+* **Sample Call:**
+
+  ```javascript
+    axios.post('/api/todos/update' {
+      id: 'id',
+      title: 'Updated title',
+      isCompleted: true
+    })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  ```
+

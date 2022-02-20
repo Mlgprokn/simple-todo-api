@@ -152,7 +152,7 @@ A simple todo api using node.js and mongodb with JWT Authentication.
     });
   ```
   
-  **Create a new Todo**
+**Create a new Todo**
 ----
   Creates a new todo
 

@@ -1,6 +1,16 @@
 # simple-todo-api
 A simple todo api using node.js and mongodb with JWT Authentication.
 
+**Setup**
+
+To get all the requred packaged run: 
+
+`npm install`
+
+In order to start the API run: 
+
+`npm start`
+
 
 # API Documentation
 **Register**

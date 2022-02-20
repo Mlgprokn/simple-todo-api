@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import logging from './config/logging';
 import config from './config/config';
 import todoRoutes from './routes/todo';
+import userRoutes from './routes/user';
 import mongoose from 'mongoose';
 
 const NAMESPACE = 'Server';
@@ -37,7 +38,7 @@ router.use(bodyParser.json());
 
 /** Rules of out API */
 router.use((req, res, next) => {
-    res.header('Access-Controll-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
 
     if (req.method == 'OPTIONS') {
@@ -50,6 +51,7 @@ router.use((req, res, next) => {
 
 /** Routes */
 router.use('/api/todos', todoRoutes);
+router.use('/api/users', userRoutes);
 
 /** Error Handling */
 router.use((req, res, next) => {
